@@ -24,3 +24,5 @@ W celu zakończenia pracy rzy drugiej metodzie jeśli środowisko nie otworzy te
 ```bash
 docker compose down
 ```
+### Dowód działania aplikacji:
+![alt text](https://github.com/Flossyy/Realizacja-zadania-nr1-w-ramach-laboratorium-PFSwCO/blob/e54b0a97d1ccc92df978eccda19c25a2eef534f1/img.png)
