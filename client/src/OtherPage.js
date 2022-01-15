@@ -1,6 +1,7 @@
 import React from 'react';
 import slice1 from './slice1.png'
 import slice2 from './slice2.png'
+import architecture from './architecture.png'
 // eslint-disable-next-line
 import { Link } from 'react-router-dom';
 
@@ -21,7 +22,16 @@ export default () => {
             <p>- Największa liczbą jaką można wysłać jest 20, zmiana ta jest po stronie serwera</p>
           </div>
         </div>
-
+      </div>
+      <div>
+        <h3>Opis działania</h3>
+        Aplikacja jest usługą wielokontenerową. System udostępnia 3 strony.
+        <img src={architecture} alt='Architektura' /><p />
+        Pierwsza jest nawigacyjna. Druga przedstawia kalkulator wyrazów ciągu Fibonaciego a na trzeciej znajduje się ten opis.
+        Postgres przechowuje listę wszystkich wprowadzonych współczynników. Worker nasłuchuje
+        wprowadzenie nowego współczynnika pobierając każdą wartość i przypisując jej wartość z ciągu
+        i przekazuje do bazy Redis, który przechowuje wszystkie współczynniki i ich wartości w
+        postaci: klucz-wartość. Zapytania z aplikacji trafiają do Redisa i jego odpowiedź jest formatowana i wyświetlana w historii.
       </div>
       <div>
         <h2>Przedstawienie najważnieszych zmian w kodzie:</h2>
