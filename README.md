@@ -9,6 +9,11 @@ Zmiany wprowadzone w programie:
     - W historii wyświetla się 10 ostatnich wartości po nacisnięciu przycisku "historia"
     - Największa liczbą jaką można wysłać jest 20, zmiana ta jest po stronie serwera
 
+### Opis działania usługi
+Aplikacja jest usługą wielokontenerową. System udostępnia 3 strony. Pierwsza jest nawigacyjna. Druga przedstawia kalkulator wyrazów ciągu Fibonaciego a na trzeciej znajduje się ten opis.
+![alt text](https://github.com/Flossyy/Realizacja-zadania-nr1-w-ramach-laboratorium-PFSwCO/blob/62cfa5cecb3c6b77b7852e3c9599b830c192aaab/architecture.png)
+Postgres przechowuje listę wszystkich wprowadzonych współczynników. Worker nasłuchuje wprowadzenie nowego współczynnika pobierając każdą wartość i przypisując jej wartość z ciągu i przekazuje do bazy Redis, który przechowuje wszystkie współczynniki i ich wartości w postaci: klucz-wartość. Zapytania z aplikacji trafiają do Redisa i jego odpowiedź jest formatowana i wyświetlana w historii. 
+
 ### Uruchomienie aplikacji
 W celu uruchomienia aplikacji otwieramy w terminalu katalog w którym się znajdują pobrane pliki.
 Pierwszym sposobem jest wywołanie komendy:
